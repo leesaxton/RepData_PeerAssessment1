@@ -248,6 +248,12 @@ ggsave("./figures/figure4.png")
 ```
 ## Saving 7 x 5 in image
 ```
+
+```r
+include_graphics("./figures/figure4.png")
+```
+
+<img src="./figures/figure4.png" width="2099" />
 **This concludes the assignment**
 
 

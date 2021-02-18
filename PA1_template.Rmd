@@ -2,8 +2,9 @@
 title: "Reproducible Research: Peer Assessment 1"
 author: "Lee Saxton"
 date: "February 18, 2021"
-output: html_document
-keep_md: true
+output: 
+  html_document:
+     keep_md: true
 ---
 
 ## Loading and preprocessing the data
@@ -127,7 +128,7 @@ activity$daytype <- factor(ifelse(activity$weekday %in% c("Saturday", "Sunday"),
 head(activity)
 tail(activity)
 ```
-Calculate average steps taken in each 5 mintue interval for weeknd days and week days  
+Calculate average steps taken in each 5 mintue interval for weekend days and week days  
 ```{r}
 stepsperintervalpertype <- aggregate(steps ~ interval + daytype, activity, FUN=mean, na.rm=TRUE)
 ```
@@ -139,6 +140,7 @@ labs(x="Interval", y="Number of steps") +
 facet_wrap(~daytype , ncol=1, nrow=2) +
 theme_bw ()
 ggsave("./figures/figure4.png")
+include_graphics("./figures/figure4.png")
 ```
 **This concludes the assignment**
 
